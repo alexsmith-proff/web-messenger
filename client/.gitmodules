@@ -1,0 +1,3 @@
+[submodule "src/ui_web_library"]
+	path = src/ui_web_library
+	url = https://git.local.pulsar/ui_web_library/reactjs/ui_web_library.git

@@ -1,0 +1,49 @@
+.info{
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+}
+.ico{
+    margin-right: 15px;
+    img{
+        width: 60px;
+        height: 60px;
+    }
+}
+.top{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.name{
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+.time{
+    font-size: 16px;
+    font-style: italic;
+}
+.count{
+    font-size: 16px;
+    font-weight: bold;
+}
+.users{
+    font-size: 16px;
+}
+
+@media screen and (max-width: 1200px) {
+    .name{
+        font-size: 16px;
+        // margin-right: 15px;
+    }
+    .time{
+        font-size: 14px;
+    }
+    .count{
+        font-size: 14px;
+    }
+    .users{
+        font-size: 14px;
+    }
+}

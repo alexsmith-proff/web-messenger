@@ -1,0 +1,27 @@
+
+@use "../theme.scss";
+
+
+//$error_border2: 10px solid rgba(224, 0, 0, 0.9);
+
+@mixin input_style {
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    box-shadow: 1px 1px 5.900000095367432px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    
+    
+    &.error {
+        border: theme.$error_border;//, 1px solid rgba(255, 0, 0, 0.9));
+        box-shadow: theme.$error_border_shadow;// 1px solid rgba(255, 0, 0, 0.2);
+    }
+
+    &.disable {
+        background-color: #e0e0e0;
+    }
+}
+
+@mixin lable_style {
+    font-weight: bold;
+}

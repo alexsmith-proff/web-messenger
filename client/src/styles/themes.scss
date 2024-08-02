@@ -1,0 +1,20 @@
+
+$themes: 'rmts';
+
+
+// Стили элементов в начальном состоянии
+
+// Атрибуты елемента с ошибкой ввода
+$error_border: 5px solid rgba(224, 0, 0, 0.9);
+$error_border_shadow: 5px solid rgba(255, 251, 0, 0.932);
+// Атрибуты задизабленного элемента
+$disable_bg_color: #a0a0a0;
+
+@if $themes == "rmts" {
+    // Атрибуты елемента с ошибкой ввода
+    $error_border: 1px solid rgba(255, 0, 0, 0.9);
+    $error_border_shadow: 1px solid rgba(255, 0, 0, 0.2);
+
+    // Атрибуты задизабленного элемента
+    $disable_bg_color: #e0e0e0;
+}

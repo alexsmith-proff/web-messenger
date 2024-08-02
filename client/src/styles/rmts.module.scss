@@ -1,0 +1,7 @@
+@use "themes.scss" with (
+    $theme: "rmts"
+);
+
+.rmts {
+    text-align: left;
+}

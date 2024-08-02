@@ -1,0 +1,50 @@
+.find {
+    display: flex;
+    align-items: center;
+    padding: 25px 20px 25px 15px;
+    border: 1px solid #D0D0D0;
+    border-bottom: none;
+    width: 100%;
+    box-sizing: border-box;
+
+    &InputWrap {
+        width: 100%;
+    }
+
+    &Ico {
+        color: #aaa;
+        margin-right: 10px;
+        padding: 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover{
+            background-color: #D0D0D0;
+            color: #000;
+        }
+    }
+
+    &Input {
+        width: 100%;
+        font-size: 16px;
+        font-weight: normal;
+        padding: 10px 30px 10px 20px;
+        border: 1px solid #aaa;
+        box-shadow: none;
+        border-radius: 40px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .find {
+        padding: 25px 20px 25px 15px;
+        &Ico {
+            margin-right: 10px;
+            padding: 5px;
+        }
+    
+        &Input {
+            font-size: 14px;
+            padding: 7px 30px 7px 20px;
+        }
+    }
+}

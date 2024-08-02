@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-08-02T11:25:26.276Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="Q2SFVd0xkLKiaYX_hR9X" version="21.3.8" type="device">
+<mxfile host="app.diagrams.net" modified="2024-08-02T12:53:26.494Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36" etag="0rmFOd_S1NiemkHUWEMZ" version="21.3.8" type="device">
   <diagram id="WG7RHVSNt35h0nU3T_CJ" name="DB">
-    <mxGraphModel dx="4706" dy="2423" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
+    <mxGraphModel dx="633" dy="326" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
       <root>
         <mxCell id="PJwwnjKNIrOmF94pEZzt-0" />
         <mxCell id="PJwwnjKNIrOmF94pEZzt-1" parent="PJwwnjKNIrOmF94pEZzt-0" />
@@ -274,7 +274,7 @@
         <mxCell id="mOdgYHokSKIeEAVoACv8-26" value="id: number&#xa;name: string&#xa;slug: string&#xa;user: UserEntity[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="mOdgYHokSKIeEAVoACv8-25">
           <mxGeometry y="30" width="160" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="mOdgYHokSKIeEAVoACv8-27" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.01;entryY=0.429;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.007;exitY=0.81;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="PJwwnjKNIrOmF94pEZzt-1" source="mOdgYHokSKIeEAVoACv8-21" target="PJwwnjKNIrOmF94pEZzt-7">
+        <mxCell id="mOdgYHokSKIeEAVoACv8-27" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.998;entryY=0.429;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.007;exitY=0.81;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="PJwwnjKNIrOmF94pEZzt-1" source="mOdgYHokSKIeEAVoACv8-21" target="PJwwnjKNIrOmF94pEZzt-7">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="220" y="90" as="sourcePoint" />
             <mxPoint x="152" y="-75" as="targetPoint" />
@@ -286,7 +286,7 @@
         <mxCell id="mOdgYHokSKIeEAVoACv8-29" value="id: number&#xa;name: string&#xa;user: UserEntity[]" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" vertex="1" parent="mOdgYHokSKIeEAVoACv8-28">
           <mxGeometry y="30" width="160" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="mOdgYHokSKIeEAVoACv8-30" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=1.01;entryY=0.858;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.002;exitY=0.785;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="PJwwnjKNIrOmF94pEZzt-1" source="mOdgYHokSKIeEAVoACv8-29" target="PJwwnjKNIrOmF94pEZzt-7">
+        <mxCell id="mOdgYHokSKIeEAVoACv8-30" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.999;entryY=0.855;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.002;exitY=0.785;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="PJwwnjKNIrOmF94pEZzt-1" source="mOdgYHokSKIeEAVoACv8-29" target="PJwwnjKNIrOmF94pEZzt-7">
           <mxGeometry width="100" height="100" relative="1" as="geometry">
             <mxPoint x="240" y="360" as="sourcePoint" />
             <mxPoint x="172" y="313" as="targetPoint" />

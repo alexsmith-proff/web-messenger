@@ -1,6 +1,7 @@
 import { JobTitleEntity } from "src/jobtitle/entity/jobtitle.entity";
+import { RoomEntity } from "src/room/entities/room.entity";
 import { SubDivisionEntity } from "src/subdivision/entities/subdivision.entity";
-import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, ManyToOne, JoinColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 export enum UserRole {
     ADMIN = "admin",
@@ -24,14 +25,14 @@ export class UserEntity{
     @Column({default: ''})
     surname: string 
 
-    @Column({default: ''})
-    birthday: Date 
+    // @Column({default: ''})
+    // birthday: Date 
 
     @Column({default: false})
     online: boolean
     
-    @Column({default: ''})
-    lastVisited: Date 
+    // @Column({default: ''})
+    // lastVisited: Date 
 
     @Column({default: ''})
     phoneInternal: string 
@@ -50,14 +51,15 @@ export class UserEntity{
     jobTitle_ref: JobTitleEntity 
 
     @ManyToOne(() => SubDivisionEntity, subdivision => subdivision.users, {onDelete: "CASCADE"})
+    @JoinColumn({name: 'subdivision_id'})
     subDivision_ref: SubDivisionEntity 
 
-    @ManyToOne(() => JobTitleEntity, jobtitle => jobtitle.users, {onDelete: "CASCADE"})
-    room_ref: JobTitleEntity 
+    @ManyToOne(() => RoomEntity, room => room.users, {onDelete: "CASCADE"})
+    room_ref: RoomEntity 
 
-    @CreateDateColumn()
-    createdAt: Date
+    // @CreateDateColumn()
+    // createdAt: Date
 
-    @UpdateDateColumn()
-    updatedAt: Date
+    // @UpdateDateColumn()
+    // updatedAt: Date
 }

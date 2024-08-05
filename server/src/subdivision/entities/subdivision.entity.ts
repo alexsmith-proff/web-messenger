@@ -11,6 +11,6 @@ export class SubDivisionEntity{
     @Column()
     slug: string
 
-    @OneToMany(() => UserEntity, user => user.subDivision_ref)
+    @OneToMany(() => UserEntity, user => user.subDivision_ref, {eager: true, cascade: true})
     users: UserEntity[]
 }

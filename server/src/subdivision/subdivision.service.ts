@@ -1,56 +1,42 @@
-
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { SubDivisionEntity } from './entities/subdivision.entity';
+import { CreateSubDivisionInput } from './dto/create.subdivision.input';
+import { UpdateSubDivisionInput } from './dto/update.subdivision.input';
 
-var getSlug = require('speakingurl');
+let getSlug = require('speakingurl')
 
 @Injectable()
 export class SubDivisionService {
   constructor(
     @InjectRepository(SubDivisionEntity)
-    private readonly subDivisionRepository: Repository<SubDivisionEntity>,
-  ) {}
+    private readonly subDivisionRepository: Repository<SubDivisionEntity>
+  ){}
 
-//   async create(
-//     createMenuItemInput: CreateMenuItemInput,
-//   ): Promise<MenuItemEntity> {
-//     return await this.menuItemRepository.save({
-//       ...createMenuItemInput,
-//       menu: { id: createMenuItemInput.menu_id },
-//       link: getSlug(createMenuItemInput.name), 
-//       slug: getSlug(createMenuItemInput.name)
-//     });
-//   }
+  async create(createSubDivisionInput: CreateSubDivisionInput): Promise<SubDivisionEntity> {
+    return await this.subDivisionRepository.save({
+      ...createSubDivisionInput,
+      slug: createSubDivisionInput.slug === '' ? getSlug(createSubDivisionInput.name) : createSubDivisionInput.slug
+    })
+  }
 
-//   async findAll(): Promise<MenuItemEntity[]> {
-//     return await this.menuItemRepository.find({
-//       relations: {
-//         submenuitems: true,
-//       }
-//     });
-//   }
+  async findAll(): Promise<SubDivisionEntity[]> {
+    return await this.subDivisionRepository.find({ relations: { users: true } })
+  }
 
-//   async findOne(id: number): Promise<MenuItemEntity> {
-//     return await this.menuItemRepository.findOne({
-//       where: {
-//         id: id,
-//       },
-//       relations: {
-//         submenuitems: true,
-//       },
-//     });
-//   }
+  async findOne(id: number): Promise<SubDivisionEntity> {
+    return await this.subDivisionRepository.findOne({ where: {id}, relations: {users: true }});
+  }
 
-//   async update(id: number, updateMenuItemInput: UpdateMenuItemInput): Promise<MenuItemEntity> {
-//     await this.menuItemRepository.update(id, updateMenuItemInput);
-//     return await this.findOne(id);
-//   }
+  async update(id: number, updateSubDivisionInput: UpdateSubDivisionInput): Promise<SubDivisionEntity> {
+    await this.subDivisionRepository.update(id, updateSubDivisionInput)
+    return await this.findOne(id)
+  }
 
-//   async remove(id: number): Promise<MenuItemEntity> {
-//     const user = await this.findOne(id);
-//     await this.menuItemRepository.delete(id);
-//     return user;
-//   }
+  async remove(id: number) {
+    const subDivision = await this.findOne(id)
+    await this.subDivisionRepository.delete(id)
+    return subDivision
+  }
 }

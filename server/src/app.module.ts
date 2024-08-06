@@ -10,6 +10,7 @@ import { JobTitleEntity } from './jobtitle/entity/jobtitle.entity';
 import { RoomEntity } from './room/entities/room.entity';
 import { RoomModule } from './room/room.module';
 import { JobTitleModule } from './jobtitle/jobtitle.module';
+import { SubDivisionModule } from './subdivision/subdivision.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { JobTitleModule } from './jobtitle/jobtitle.module';
     UserModule,
     RoomModule,
     JobTitleModule,
+    SubDivisionModule,
   ],
   controllers: [AppController],
   providers: [AppService],

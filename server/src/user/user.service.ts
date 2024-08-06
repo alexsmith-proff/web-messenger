@@ -21,6 +21,7 @@ export class UserService {
             where: {
                 id,
             },
+            relations: {settings: true}
         })
         if(!user) throw new HttpException('user не найден', HttpStatus.UNAUTHORIZED)
         return user

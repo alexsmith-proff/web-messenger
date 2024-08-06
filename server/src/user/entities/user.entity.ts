@@ -1,7 +1,8 @@
 import { JobTitleEntity } from "src/jobtitle/entity/jobtitle.entity";
 import { RoomEntity } from "src/room/entities/room.entity";
+import { SettingsEntity } from "src/settings/entities/settings.entity";
 import { SubDivisionEntity } from "src/subdivision/entities/subdivision.entity";
-import { Column, CreateDateColumn, Entity, ManyToOne, JoinColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToOne, ManyToOne, JoinColumn, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 export enum UserRole {
     ADMIN = "admin",
@@ -57,9 +58,12 @@ export class UserEntity{
     @ManyToOne(() => RoomEntity, room => room.users, {onDelete: "CASCADE"})
     room_ref: RoomEntity 
 
-    // @CreateDateColumn()
-    // createdAt: Date
+    @OneToOne(() => SettingsEntity, settings => settings.user, {eager: true, cascade: true})
+    settings: SettingsEntity 
 
-    // @UpdateDateColumn()
-    // updatedAt: Date
+    @CreateDateColumn()
+    createdAt: Date
+
+    @UpdateDateColumn()
+    updatedAt: Date
 }

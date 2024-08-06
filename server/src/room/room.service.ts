@@ -5,6 +5,8 @@ import { RoomEntity } from './entities/room.entity';
 import { CreateRoomInput } from './dto/create.room.input';
 import { UpdateRoomInput } from './dto/update.room.input';
 
+let getSlug = require('speakingurl')
+
 @Injectable()
 export class RoomService {
   constructor(
@@ -12,9 +14,11 @@ export class RoomService {
     private readonly roomRepository: Repository<RoomEntity>
   ){}
 
-  async create(createRoomInput: CreateRoomInput) {
-   
-    return await this.roomRepository.save(createRoomInput)
+  async create(createRoomInput: CreateRoomInput): Promise<RoomEntity> {
+    return await this.roomRepository.save({
+      ...createRoomInput,
+      slug: createRoomInput.slug === '' ? getSlug(createRoomInput.name) : createRoomInput.slug
+    })
   }
 
   async findAll(): Promise<RoomEntity[]> {

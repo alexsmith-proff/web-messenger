@@ -23,8 +23,8 @@ export class RoomController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateOrderDto: UpdateRoomInput) {
-    return this.roomService.update(+id, updateOrderDto);
+  update(@Param('id') id: string, @Body() updateRoomInput: UpdateRoomInput) {
+    return this.roomService.update(+id, updateRoomInput);
   }
 
   @Delete(':id')

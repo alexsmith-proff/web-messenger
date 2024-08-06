@@ -8,9 +8,10 @@ export class JobTitleEntity{
 
     @Column({default: ''})
     name: string
+
     @Column()
     slug: string
 
-    @OneToMany(() => UserEntity, user => user.jobTitle_ref)
+    @OneToMany(() => UserEntity, user => user.jobTitle_ref, { eager: true, cascade: true })
     users: UserEntity[]
 }

@@ -8,6 +8,8 @@ import { UserModule } from './user/user.module';
 import { SubDivisionEntity } from './subdivision/entities/subdivision.entity';
 import { JobTitleEntity } from './jobtitle/entity/jobtitle.entity';
 import { RoomEntity } from './room/entities/room.entity';
+import { RoomModule } from './room/room.module';
+import { JobTitleModule } from './jobtitle/jobtitle.module';
 
 @Module({
   imports: [
@@ -34,7 +36,9 @@ import { RoomEntity } from './room/entities/room.entity';
         synchronize: true,
       })
     }),
-    UserModule
+    UserModule,
+    RoomModule,
+    JobTitleModule,
   ],
   controllers: [AppController],
   providers: [AppService],

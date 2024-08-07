@@ -6,6 +6,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { MessageEntity } from './message/entities/message.entity';
 import { MessageDataEntity } from './messagedata/entities/messagedata.entity';
 import { MessageDataModule } from './messagedata/messagedata.module';
+import { MessageModule } from './message/message.module';
 
 @Module({
   imports: [
@@ -26,11 +27,13 @@ import { MessageDataModule } from './messagedata/messagedata.module';
         entities: [
           MessageEntity,
           MessageDataEntity,
+          MessageEntity
         ],
         synchronize: true,
       })
     }),
-    MessageDataModule
+    MessageDataModule,
+    MessageModule
   ],
   controllers: [AppController],
   providers: [AppService],

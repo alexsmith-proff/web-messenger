@@ -29,6 +29,9 @@ export class MessageEntity{
     @Column({default: false})
     changed: boolean
 
+    @Column()
+    user_id: number
+
     @OneToOne(() => MessageDataEntity, messageData => messageData.message, {eager: true, cascade: true})
     data: MessageDataEntity
 

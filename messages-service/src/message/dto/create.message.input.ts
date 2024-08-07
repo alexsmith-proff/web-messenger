@@ -4,5 +4,5 @@ export class CreateMessageInput {
     type: MessageType
     status: MessageStatus
     changed: boolean
-    userid: number
+    user_id: number
 }

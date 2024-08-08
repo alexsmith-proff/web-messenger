@@ -24,6 +24,10 @@ export class MessageService {
     return await this.messageRepository.findOne({ where: {id}, relations: {data: true }})
   }
 
+  async findAllByUser(user_id: number): Promise<MessageEntity[]> {
+    return await this.messageRepository.find({ where: {user_id}, relations: {data: true }, order: {createdAt: 'ASC'}})
+  }
+
   async update(id: number, updateMessageInput: UpdateMessageInput): Promise<MessageEntity> {
     await this.messageRepository.update(id, updateMessageInput)
     return await this.findOne(id)

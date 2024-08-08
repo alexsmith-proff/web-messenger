@@ -12,9 +12,9 @@ export class MessageController {
     return this.messageService.create(createMessageInput);
   }
 
-  @Get()
-  findAll() {
-    return this.messageService.findAll();
+  @Get('user/:user_id')
+  findByUser(@Param('user_id') user_id: string){
+    return this.messageService.findAllByUser(+user_id)
   }
 
   @Get(':id')
